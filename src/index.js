@@ -149,8 +149,10 @@ module.exports = Component => {
         const vdom = vdomList
         if (vdom && vdom.get('ref') && vdom.get('ref').current) {
           const method = dotGet(vdom.get('ref').current, methodName)
+          const refName = methodName.replace(/\..+?$/, '')
+          const parent = methodName === refName ? vdom.get('ref').current : dotGet(vdom.get('ref').current, refName)
           if (typeof method === 'function') {
-            return method.apply(vdom.get('ref').current, argvs)
+            return method.apply(parent, argvs)
           }
           return method
         }

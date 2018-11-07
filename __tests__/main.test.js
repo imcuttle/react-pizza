@@ -139,6 +139,16 @@ Array [
         count: this.props.count || 1
       }
 
+      fn = {
+        val: 'abc',
+        ok(val) {
+          this.val = val
+        },
+        setOk: val => {
+          this.val = val
+        }
+      }
+
       componentDidMount() {
         this._t = setInterval(() => {
           this.increase()
@@ -164,6 +174,20 @@ Array [
       const timer = render('#root', { count: 10 })
       expect(timer.origin).toBe(Timer)
       expect(render.origin).toBe(Timer)
+    })
+
+    it('`call` in deep', async () => {
+      const render = habitat(Timer)
+      document.body.innerHTML = `<div id="root"></div>`
+      const timer = render('#root', { count: 10 })
+
+      expect(timer.call('fn.val', 0)).toBe('abc')
+      timer.call('fn.ok', ['hhh'])
+      expect(timer.call('fn.val', 0)).toBe('hhh')
+      expect(timer.call('val', 0)).toBeUndefined()
+
+      timer.call('fn.setOk', ['hhhhh'])
+      expect(timer.call('val', 0)).toBe('hhhhh')
     })
 
     it('ReactComponent case', async () => {
