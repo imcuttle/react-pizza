@@ -2,15 +2,14 @@
   "name": "react-pizza",
   "version": "0.0.0",
   "main": "index.js",
-  "description": "The utility for create react component habitat.",
+  "description": "The utility for create (p)react component habitat.",
   "author": "imcuttle <moyuyc95@gmail.com>",
   "scripts": {
     "test": "jest",
     "prepublishOnly": "npm test",
     "build": "rimraf lib && babel src/ -Dd lib",
     "dev": "npm run build -- -w",
-    "doc": "documentation --github --shallow --markdown-toc=false readme src/index.js -a public -s \"API\" && git add README.md",
-    "version": "npm run doc && npm run changelog",
+    "version": "npm run changelog",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "husky": {
@@ -25,7 +24,10 @@
   },
   "keywords": [
     "imcuttle",
+    "preact",
     "react",
+    "standalone",
+    "independent",
     "pizza",
     "react-pizza"
   ],
