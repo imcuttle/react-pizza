@@ -65,6 +65,10 @@ timer.remove()
 
 timer.remove(0)
 timer.remove(document.querySelect('#root'))
+
+// Mount origin
+timer.origin === render.origin
+timer.origin === Timer
 ```
 
 ## Contributing

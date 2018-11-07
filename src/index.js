@@ -52,7 +52,7 @@ function VDom(dom) {
  * @return {Renderer}
  */
 module.exports = Component => {
-  return function(selector, props = {}) {
+  function pizzaRender(selector, props = {}) {
     const domList = querySelectorAll(selector)
     const vDomList = []
 
@@ -68,6 +68,7 @@ module.exports = Component => {
       render(node, dom)
       return { node, ref }
     }
+
     domList.forEach(dom => {
       const { node, ref } = renderToDom(dom)
       const vDom = VDom(dom)
@@ -78,6 +79,9 @@ module.exports = Component => {
     })
 
     return {
+      get origin() {
+        return Component
+      },
       /**
        * @param dom
        * @return {number}
@@ -153,4 +157,8 @@ module.exports = Component => {
       }
     }
   }
+
+  pizzaRender.origin = Component
+
+  return pizzaRender
 }

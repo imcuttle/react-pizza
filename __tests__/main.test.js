@@ -159,6 +159,13 @@ Array [
       }
     }
 
+    it('origin', () => {
+      const render = habitat(Timer)
+      const timer = render('#root', { count: 10 })
+      expect(timer.origin).toBe(Timer)
+      expect(render.origin).toBe(Timer)
+    })
+
     it('ReactComponent case', async () => {
       jest.useFakeTimers()
 

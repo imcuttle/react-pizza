@@ -15,6 +15,7 @@ type VDom = {
 type NumberOrDOM = number | DOMCombine
 
 type PizzaResult = {
+  readonly origin: React.ComponentType
   indexOf: (dom: DOMCombine) => number
   setProps: (props: any, indexOrDom: NumberOrDOM) => void
   remove: (indexOrDom: NumberOrDOM) => void
@@ -28,7 +29,9 @@ type PizzaResult = {
   call: (attrName: String | Symbol) => any[]
 }
 
-type PizzaRender<P = any> = (selector: HTMLElement | NodeList | string | HTMLElement[], props: P) => PizzaResult
+type PizzaRender<P> = ((selector: HTMLElement | NodeList | string | HTMLElement[], props: P) => PizzaResult) & {
+  origin: React.ComponentType
+}
 
 type Pizza = (Component: React.ComponentType) => PizzaRender
 
