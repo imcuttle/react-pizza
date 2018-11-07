@@ -7,6 +7,7 @@
   "scripts": {
     "test": "jest",
     "prepublishOnly": "npm test",
+    "prepare": "npm run build",
     "build": "rimraf lib && babel src/ -Dd lib",
     "dev": "npm run build -- -w",
     "version": "npm run changelog",
