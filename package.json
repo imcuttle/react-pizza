@@ -1,6 +1,6 @@
 {
   "name": "react-pizza",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "description": "The utility for create (p)react component habitat.",
   "author": "imcuttle <moyuyc95@gmail.com>",
