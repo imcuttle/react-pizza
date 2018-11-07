@@ -16,7 +16,7 @@
     "src",
     "lib",
     "index.js",
-    "index.d.js"
+    "index.d.ts"
   ],
   "husky": {
     "hooks": {
