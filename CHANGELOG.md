@@ -1,3 +1,11 @@
+<a name="0.1.3"></a>
+
+## [0.1.3](https://github.com/imcuttle/react-pizza/compare/v0.1.2...v0.1.3) (2021-02-09)
+
+### Bug Fixes
+
+- ts define ([cf6da94](https://github.com/imcuttle/react-pizza/commit/cf6da94))
+
 <a name="0.1.2"></a>
 
 ## [0.1.2](https://github.com/imcuttle/react-pizza/compare/v0.1.1...v0.1.2) (2018-11-07)
